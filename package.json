@@ -1,0 +1,26 @@
+{
+  "name": "search-service",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "dev": "tsx watch src/main.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test \"test/**/*.test.ts\""
+  },
+  "license": "UNLICENSED",
+  "description": "Microservicio de búsqueda: proyecta eventos de Kafka a OpenSearch (CQRS, guía 11)",
+  "dependencies": {
+    "@opensearch-project/opensearch": "^3.10.0",
+    "express": "^5.3.0",
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "private": true,
+  "type": "commonjs"
+}

@@ -1,0 +1,115 @@
+# ==============================================================
+# .gitignore — search-service (Node.js + TypeScript)
+# ==============================================================
+
+# --------------------------------------------------------------
+# Dependencias
+# --------------------------------------------------------------
+node_modules/
+jspm_packages/
+bower_components/
+
+# --------------------------------------------------------------
+# Build y salidas compiladas
+# --------------------------------------------------------------
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# --------------------------------------------------------------
+# Variables de entorno y secretos
+# (el .env real contiene credenciales de Aiven / Kafka / OpenSearch)
+# --------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+secrets/
+
+# --------------------------------------------------------------
+# Logs y archivos temporales de npm / yarn / pnpm
+# --------------------------------------------------------------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# --------------------------------------------------------------
+# Tests y cobertura
+# --------------------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+
+# --------------------------------------------------------------
+# Caches
+# --------------------------------------------------------------
+.cache/
+.parcel-cache/
+.eslintcache
+.npm/
+.yarn/cache/
+.yarn/install-state.gz
+.pnp.*
+.node_repl_history
+
+# --------------------------------------------------------------
+# Runtime / diagnósticos
+# --------------------------------------------------------------
+*.pid
+*.seed
+*.pid.lock
+heapsnapshot
+*.cpuprofile
+
+# --------------------------------------------------------------
+# Docker / despliegue local
+# --------------------------------------------------------------
+docker-compose.override.yml
+.docker/
+
+# --------------------------------------------------------------
+# Editores e IDEs
+# --------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# --------------------------------------------------------------
+# Sistema operativo
+# --------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.Trash-*

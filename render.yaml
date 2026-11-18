@@ -1,0 +1,41 @@
+# ==============================================================
+# render.yaml — Blueprint de Render para search-service
+# Uso: Render Dashboard → New → Blueprint → seleccionar el repo.
+# Las variables marcadas con sync: false se piden en el dashboard
+# (nunca se guardan en el repositorio).
+# ==============================================================
+services:
+  - type: web
+    name: search-service
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3003"
+      - key: OPENSEARCH_URL
+        sync: false
+      - key: OPENSEARCH_INDEX
+        value: users
+      - key: KAFKA_BROKERS
+        sync: false
+      - key: KAFKA_CLIENT_ID
+        value: search-service
+      - key: KAFKA_GROUP_ID
+        value: search-service
+      - key: KAFKA_TOPIC_USER_EVENTS
+        value: users.events
+      - key: KAFKA_SECURITY_PROTOCOL
+        value: SASL_SSL
+      - key: KAFKA_USERNAME
+        sync: false
+      - key: KAFKA_PASSWORD
+        sync: false
+      - key: KAFKA_CA_CERT
+        sync: false

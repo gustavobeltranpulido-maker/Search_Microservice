@@ -1,0 +1,36 @@
+# Evita enviar al contexto de build archivos innecesarios o sensibles.
+
+# Dependencias locales (se reinstalan dentro de la imagen)
+node_modules
+npm-debug.log*
+
+# Salidas y cachés
+dist
+coverage
+.cache
+*.tsbuildinfo
+
+# Secretos y configuración local (en Render se usan variables de entorno)
+.env
+.env.*
+!.env.example
+
+# Tests y documentación: no se necesitan en runtime
+test
+*.test.ts
+README.md
+
+# Control de versiones e IDE
+.git
+.gitignore
+.dockerignore
+.vscode
+.idea
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Docker / Render (no entran a la imagen)
+Dockerfile
+render.yaml
